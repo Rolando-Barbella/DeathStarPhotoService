@@ -8,6 +8,13 @@ class PhotosController < ApplicationController
     redirect_to '/'
   end
 
+  def show
+    id = params[:id]
+    puts params
+    puts Photo.all
+    @photo = Photo.find_by_id(id)
+  end
+
   private
 
   def photo_params

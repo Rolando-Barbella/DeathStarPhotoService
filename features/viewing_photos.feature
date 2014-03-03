@@ -1,11 +1,11 @@
 Feature: Viewing Photos
 
 Background:
-  Given there are photos in the database
+  Given there is a photo in the database
 
 Scenario: Viewing the homepage
   Given I am on the homepage
-  Then I should see the photos
+  Then I should see the photo
   And I should see their description
 
 @wip

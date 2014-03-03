@@ -24,4 +24,6 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'launchy'
+  gem 'awesome_print'
 end
