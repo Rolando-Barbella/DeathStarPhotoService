@@ -1,4 +1,5 @@
 DeathStarPhotoService::Application.routes.draw do
+  devise_for :users
   resources :users
 
   get 'welcome/home'
