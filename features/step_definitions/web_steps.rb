@@ -27,11 +27,13 @@ Given(/^there are photos in the database$/) do
 end
 
 Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/'
 end
 
 Then(/^I should see the photos$/) do
-  pending # express the regexp above with the code you wish you had
+  element = page.first(:css, 'img')
+  src = element[:src]
+  expect(src).to match(/test.jpg/)
 end
 
 Then(/^I should see their description$/) do
