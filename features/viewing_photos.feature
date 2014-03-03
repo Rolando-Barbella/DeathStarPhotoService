@@ -3,7 +3,6 @@ Feature: Viewing Photos
 Background:
   Given there are photos in the database
 
-@wip
 Scenario: Viewing the homepage
   Given I am on the homepage
   Then I should see the photos

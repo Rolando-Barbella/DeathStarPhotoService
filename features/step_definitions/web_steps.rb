@@ -20,6 +20,22 @@ Then(/^my photo should be added to the DB$/) do
 end
 
 Given(/^there are photos in the database$/) do
+  visit '/photos/new'
+  attach_file('photo_image', 'features/test.jpg')
+  fill_in 'photo_description', with: 'this is programming cat'
+  click_button 'upload'
+end
+
+Given(/^I am on the homepage$/) do
   pending # express the regexp above with the code you wish you had
 end
+
+Then(/^I should see the photos$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see their description$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
 
