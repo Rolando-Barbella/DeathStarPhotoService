@@ -13,8 +13,6 @@ Given(/^I enter valid details$/) do
   fill_in :email, with: email
 end
 
-
-
 Then(/^I should be added as a stormtrooper$/) do
   pending # express the regexp above with the code you wish you had
 end
