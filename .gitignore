@@ -2,5 +2,5 @@
 /log/*.log
 /tmp
 /*.jpg
-public/systemt
+public/system
 .DS_Store
