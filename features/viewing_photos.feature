@@ -1,4 +1,4 @@
-Feature: 'Viewing Photos'
+Feature: Viewing Photos
 
 Background:
   Given there are photos in the database
