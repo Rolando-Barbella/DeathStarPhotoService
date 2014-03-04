@@ -4,5 +4,5 @@ Feature: User sign up
   Scenario: Input correct credentials
     Given I am on the sign up page
     And I enter valid details
-    When I press submit
+    When I press "Sign up"
     Then I should be added as a stormtrooper

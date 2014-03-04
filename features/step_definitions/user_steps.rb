@@ -14,5 +14,6 @@ Given(/^I enter valid details$/) do
 end
 
 Then(/^I should be added as a stormtrooper$/) do
-  pending # express the regexp above with the code you wish you had
+  user = User.find_by_username(username)
+  expect(user.name).to eq(name)
 end
