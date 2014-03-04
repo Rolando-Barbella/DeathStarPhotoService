@@ -5,12 +5,12 @@ password = 'lightsaber'
 email = 'Overlord@Univer.se'
 
 Given(/^I enter valid details$/) do
-  fill_in :username, with: username
-  fill_in :name, with: name
-  fill_in :location, with: location
-  fill_in :password, with: password
-  fill_in :password_confirmation, with: password
-  fill_in :email, with: email
+  fill_in :user_username, with: username
+  fill_in :user_name, with: name
+  fill_in :user_location, with: location
+  fill_in :user_password, with: password
+  fill_in :user_password_confirmation, with: password
+  fill_in :user_email, with: email
 end
 
 Then(/^I should be added as a stormtrooper$/) do

@@ -5,7 +5,7 @@ Given(/^i am on the addphotopage$/) do
 end
 
 Given(/^I am on the sign up page$/) do
-  visit '/users/new'
+  visit '/users/sign_up'
 end
 
 Given(/^i select a photo$/) do
@@ -46,7 +46,7 @@ Then(/^I should see the photo$/) do
   expect(src).to match(/test.jpg/)
 end
 
-Then(/^I should see their description$/) do
+Then(/^I should see its description$/) do
   expect(page).to have_content(photo_description_text)
 end
 

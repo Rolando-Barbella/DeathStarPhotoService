@@ -10,8 +10,6 @@ class PhotosController < ApplicationController
 
   def show
     id = params[:id]
-    puts params
-    puts Photo.all
     @photo = Photo.find_by_id(id)
   end
 
