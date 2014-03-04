@@ -13,7 +13,7 @@ Given(/^there is a photo in the database$/) do
 end
 
 Then(/^I should see the photo$/) do
-  element = page.first(:css, 'img')
+  element = page.first(:css, '#photo-stream img')
   src = element[:src]
   expect(src).to match(/test.jpg/)
 end

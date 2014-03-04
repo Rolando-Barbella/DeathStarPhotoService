@@ -1,4 +1,6 @@
-<% @photos.each do |photo|  %>
-  <a href='<%= photo_path(photo)%>'><%= image_tag photo.image.url(:medium) %></a>
-  <%= photo.description %>
-<% end %>
+<article id="photo-stream">
+  <% @photos.each do |photo|  %>
+    <a href='<%= photo_path(photo)%>'><%= image_tag photo.image.url(:medium) %></a>
+    <%= photo.description %>
+  <% end %>
+</article>

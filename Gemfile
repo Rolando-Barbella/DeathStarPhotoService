@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'paperclip'
 gem 'devise'
+gem 'aws-sdk'
 
 group :doc do
   gem 'sdoc', require: false
