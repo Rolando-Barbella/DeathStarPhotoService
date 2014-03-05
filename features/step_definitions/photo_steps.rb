@@ -1,5 +1,6 @@
 photo_description_text = 'this is programming cat'
 require 'awesome_print'
+
 Then(/^my photo should be added to the DB$/) do
   photo = Photo.find_by_description photo_description_text
   expect(photo).to be_true
@@ -24,5 +25,24 @@ end
 
 Given(/^I am on the individual photo page$/) do
   visit '/'
-  page.find(:xpath, '//img').click
+  page.find(:css, 'article img').click
+end
+
+When(/^I upload a photo$/) do
+  step %Q{I am on the addphotopage}
+  step %Q{I select a photo}
+  step %Q{I fill in the "photo_description" field}
+end
+
+Then(/^it should be sent to Pusher$/) do
+  allow(Pusher['the_force']).to receive(:trigger)
+  step %Q{I press "Upload"}
+end
+
+Given(/^I am on homepage$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^a new photo is uploaded$/) do
+  pending # express the regexp above with the code you wish you had
 end
