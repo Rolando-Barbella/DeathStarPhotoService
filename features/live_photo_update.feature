@@ -6,7 +6,6 @@ Scenario: Uploading a photo
 
 @wip
 Scenario: Sending a photo
-  Given I am on homepage
-  And a new photo is uploaded
+  Given I am on the homepage
   Then I should see the photo
   And I should see its description

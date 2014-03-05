@@ -38,11 +38,3 @@ Then(/^it should be sent to Pusher$/) do
   allow(Pusher['the_force']).to receive(:trigger)
   step %Q{I press "Upload"}
 end
-
-Given(/^I am on homepage$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^a new photo is uploaded$/) do
-  pending # express the regexp above with the code you wish you had
-end
