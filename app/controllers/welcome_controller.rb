@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def home
-    @photos = Photo.all
+    @photos = Photo.all.reverse
   end
 end

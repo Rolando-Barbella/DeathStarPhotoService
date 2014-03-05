@@ -8,7 +8,6 @@ Scenario: Viewing the homepage
   Then I should see the photo
   And I should see its description
 
-@wip
 Scenario: Viewing individual photos
   Given I am on the individual photo page
   Then I should see the photo

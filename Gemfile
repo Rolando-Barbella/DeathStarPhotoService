@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'paperclip'
 gem 'devise'
 gem 'aws-sdk'
+gem 'pusher'
 
 group :doc do
   gem 'sdoc', require: false

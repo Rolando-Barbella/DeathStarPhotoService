@@ -4,7 +4,13 @@ class PhotosController < ApplicationController
   end
 
   def create
-    Photo.create(photo_params)
+    photo = Photo.new(photo_params)
+    if photo.save
+      Pusher['the_force'].trigger('new_photo', {
+        url: photo.image.url(:medium),
+        description: photo.description
+      })
+    end
     redirect_to '/'
   end
 
@@ -19,3 +25,4 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:image, :description)
   end
 end
+
