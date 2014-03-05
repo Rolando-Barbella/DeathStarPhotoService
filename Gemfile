@@ -27,4 +27,5 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'awesome_print'
+  # gem 'guard'
 end
