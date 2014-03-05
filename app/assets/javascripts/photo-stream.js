@@ -12,7 +12,8 @@ channel.bind('new_photo', function(data) {
   if (photoStream) {
     var newSection = $('<section>');
     var img = $('<img>').attr('src', data.url);
-    newSection.append(img).append(data.description);
+    var description = $('<p>').html(data.description);
+    newSection.append(img).append(description);
     photoStream.prepend(newSection);
   }
 });

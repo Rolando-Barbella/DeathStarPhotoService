@@ -2,7 +2,7 @@
   <% @photos.each do |photo|  %>
     <section>
       <a href='<%= photo_path(photo)%>'><%= image_tag photo.image.url(:medium) %></a>
-      <%= photo.description %>
+      <p><%= photo.description %></p>
     </section>
   <% end %>
 </article>
