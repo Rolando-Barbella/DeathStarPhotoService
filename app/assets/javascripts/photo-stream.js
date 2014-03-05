@@ -17,3 +17,5 @@ channel.bind('new_photo', function(data) {
     photoStream.prepend(newSection);
   }
 });
+
+// Bring also the link tag so it can be clicked

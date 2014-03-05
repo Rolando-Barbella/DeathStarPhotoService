@@ -9,3 +9,4 @@ Scenario: Sending a photo
   Given I am on the homepage
   Then I should see the photo
   And I should see its description
+  And I should be able to visit its unique page
