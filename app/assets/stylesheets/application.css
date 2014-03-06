@@ -20,6 +20,7 @@ header {
   padding: 1em;
   background-color: black;
   color: yellow;
+  border-bottom: 3px solid #55ffff;
 }
 
 ul {
@@ -30,6 +31,27 @@ ul {
 li {
   display: inline-block;
   margin: 0 4em;
+}
+
+a {
+  text-decoration: none;
+  color: #e8edee;
+}
+
+nav {
+  position: relative;
+  left: 80%;
+  bottom: 30px;
+}
+
+header a img {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+header a:hover {
+  color: #55ffff;
 }
 
 #photo-stream {
