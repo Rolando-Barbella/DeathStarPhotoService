@@ -1,9 +1,12 @@
 Feature: Adding the photos
 
+Background:
+  Given I am a user
+
 @wip
 Scenario: Submitting a photo when signed in
-  Given I am on the addphotopage
-  And I am signed in
+  Given I am signed in
+  And I am on the addphotopage
   And I select a photo
   And I fill in the "photo_description" field
   When I press "Upload"
