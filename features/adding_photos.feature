@@ -3,7 +3,6 @@ Feature: Adding the photos
 Background:
   Given I am a user
 
-@wip
 Scenario: Submitting a photo when signed in
   Given I am signed in
   And I am on the addphotopage
@@ -12,10 +11,14 @@ Scenario: Submitting a photo when signed in
   When I press "Upload"
   Then my photo should be added to the DB
 
-@wip
 Scenario: Sumbitting a photo when not signed in
   Given I am on the homepage
   Then I shouldn't see the add new photo link
+
+@wip
+Scenario: Visiting add photo page not signed in
+  When I visit the addphotopage
+  Then I should be redirected to the homepage
 
 @wip
 Scenario: Submitting a photo without all the details

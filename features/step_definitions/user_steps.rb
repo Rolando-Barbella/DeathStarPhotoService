@@ -34,3 +34,7 @@ Given(/^I am signed in$/) do
   fill_in :user_password, with: password
   click_button 'Sign in'
 end
+
+Then(/^I shouldn't see the add new photo link$/) do
+  expect(page).not_to have_content('Add Photo')
+end
