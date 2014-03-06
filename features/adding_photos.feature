@@ -15,9 +15,8 @@ Scenario: Sumbitting a photo when not signed in
   Given I am on the homepage
   Then I shouldn't see the add new photo link
 
-@wip
 Scenario: Visiting add photo page not signed in
-  When I visit the addphotopage
+  When I am on the addphotopage
   Then I should be redirected to the homepage
 
 @wip

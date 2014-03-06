@@ -4,6 +4,10 @@ Given(/^I am on the addphotopage$/) do
   visit '/photos/new'
 end
 
+Then(/^I should be redirected to the homepage$/) do
+  expect(page).to have_css('#photo-stream')
+end
+
 Given(/^I am on the homepage$/) do
   visit '/'
 end
