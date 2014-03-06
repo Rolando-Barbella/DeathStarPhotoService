@@ -19,10 +19,9 @@ Scenario: Visiting add photo page not signed in
   When I am on the addphotopage
   Then I should be redirected to the homepage
 
-@wip
+@javascript
 Scenario: Submitting a photo without all the details
   Given I am signed in
   And I am on the addphotopage
-  When I press upload
-  Then I should see please enter details
-  And my photo should not be added to the DB
+  When I press "Upload"
+  Then my photo should not be added to the DB

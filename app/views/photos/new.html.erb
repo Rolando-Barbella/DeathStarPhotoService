@@ -1,7 +1,7 @@
 <%= form_for @photo, :url => '/photos', :html => { :multipart => true } do |form| %>
   <%= form.label :image %>
-  <%= form.file_field :image %>
+  <%= form.file_field :image, required: true  %>
   <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.text_field :description, required: true %>
   <%= form.submit :Upload %>
 <% end %>
