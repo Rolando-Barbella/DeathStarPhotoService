@@ -7,6 +7,8 @@ Then(/^my photo should be added to the DB$/) do
 end
 
 Given(/^there is a photo in the database$/) do
+  step %Q{ I am a user }
+  step %Q{ I am signed in }
   visit '/photos/new'
   attach_file('photo_image', 'features/test.jpg')
   fill_in 'photo_description', with: photo_description_text
@@ -32,6 +34,18 @@ When(/^I upload a photo$/) do
   step %Q{I am on the addphotopage}
   step %Q{I select a photo}
   step %Q{I fill in the "photo_description" field}
+end
+
+When(/^a photo is uploaded$/) do
+  Pusher.url = "http://58cfbb27046afbc265f1:0c36cbbdafd0cab1404e@api.pusherapp.com/apps/67767"
+  Pusher['the_force'].trigger('new_photo', {
+        url: 'test.jpg',
+        description: photo_description_text
+      })
+end
+
+Then(/^I should be able to visit its unique page$/) do
+  pending # express the regexp above with the code you wish you had
 end
 
 Then(/^it should be sent to Pusher$/) do

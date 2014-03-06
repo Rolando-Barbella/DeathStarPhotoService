@@ -8,7 +8,7 @@ var pusher = new Pusher('58cfbb27046afbc265f1');
 var channel = pusher.subscribe('the_force');
 
 channel.bind('new_photo', function(data) {
-  var photoStream = $('#photo-stream').first();
+  var photoStream = $('#photo-stream');
   if (photoStream) {
     var newSection = $('<section>');
     var img = $('<img>').attr('src', data.url);

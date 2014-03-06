@@ -28,6 +28,6 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'awesome_print'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
   # gem 'guard'
 end
