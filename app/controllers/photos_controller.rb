@@ -9,7 +9,8 @@ class PhotosController < ApplicationController
     if photo.save
       Pusher['the_force'].trigger('new_photo', {
         url: photo.image.url(:medium),
-        description: photo.description
+        description: photo.description,
+        id: photo.id
       })
     end
     redirect_to '/'
