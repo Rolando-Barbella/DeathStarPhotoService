@@ -7,8 +7,8 @@ Then(/^my photo should be added to the DB$/) do
 end
 
 Given(/^there is a photo in the database$/) do
-  step %Q{ I am a user }
-  step %Q{ I am signed in }
+  step %Q{I am a user}
+  step %Q{I am signed in}
   visit '/photos/new'
   attach_file('photo_image', 'features/test.jpg')
   fill_in 'photo_description', with: photo_description_text
