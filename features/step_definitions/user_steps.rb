@@ -40,7 +40,7 @@ Then(/^I shouldn't see the add new photo link$/) do
 end
 
 Given(/^I visit my profile page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit '/users/:id'
 end
 
 Then(/^I should see "(.*?)" button$/) do |arg1|
