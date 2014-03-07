@@ -38,3 +38,31 @@ end
 Then(/^I shouldn't see the add new photo link$/) do
   expect(page).not_to have_content('Add Photo')
 end
+
+Given(/^I visit my profile page$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see "(.*?)" button$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^the user has uploaded some photos$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^I am on their page$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see their photos$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^the user has not uploaded any photos$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should message "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end

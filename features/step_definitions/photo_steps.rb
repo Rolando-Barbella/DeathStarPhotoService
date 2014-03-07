@@ -37,7 +37,7 @@ When(/^I upload a photo$/) do
 end
 
 When(/^a photo is uploaded$/) do
-  Pusher.url = "http://58cfbb27046afbc265f1:0c36cbbdafd0cab1404e@api.pusherapp.com/apps/67767"
+  Pusher.url = 'http://58cfbb27046afbc265f1:0c36cbbdafd0cab1404e@api.pusherapp.com/apps/67767'
   Pusher['the_force'].trigger('new_photo', {
         url: 'test.jpg',
         description: photo_description_text
