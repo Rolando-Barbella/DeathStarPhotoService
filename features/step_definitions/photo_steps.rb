@@ -44,9 +44,9 @@ When(/^a photo is uploaded$/) do
       })
 end
 
-Then(/^I should be able to visit its unique page$/) do
-  pending # express the regexp above with the code you wish you had
-end
+# Then(/^I should be able to visit its unique page$/) do
+#   pending # express the regexp above with the code you wish you had
+# end
 
 Then(/^it should be sent to Pusher$/) do
   allow(Pusher['the_force']).to receive(:trigger)

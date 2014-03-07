@@ -44,7 +44,8 @@ Given(/^I visit my profile page$/) do
 end
 
 Then(/^I should see "(.*?)" button$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content('edit profile')
+  # expect(page).to have_selector('input', value: 'edit profile')
 end
 
 Given(/^the user has uploaded some photos$/) do
