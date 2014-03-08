@@ -44,10 +44,6 @@ When(/^a photo is uploaded$/) do
       })
 end
 
-# Then(/^I should be able to visit its unique page$/) do
-#   pending # express the regexp above with the code you wish you had
-# end
-
 Then(/^it should be sent to Pusher$/) do
   allow(Pusher['the_force']).to receive(:trigger)
   step %Q{I press "Upload"}
@@ -55,4 +51,20 @@ end
 
 Then(/^my photo should not be added to the DB$/) do
   expect(Photo.all.length).to eq(0)
+end
+
+Then(/^the username$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^the comments$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^the description$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^the username of the user it belongs to$/) do
+  expect(page).to have_content('MrBig')
 end
