@@ -6,11 +6,13 @@ class PhotosController < ApplicationController
 
   def create
     photo = Photo.new(photo_params)
+    photo.user =  current_user
     if photo.save
       Pusher['the_force'].trigger('new_photo', {
         url: photo.image.url(:medium),
         description: photo.description,
-        id: photo.id
+        id: photo.id,
+        username: photo.user.username
       })
     end
     redirect_to '/'
