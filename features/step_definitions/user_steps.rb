@@ -66,15 +66,14 @@ Given(/^the user has uploaded some photos$/) do
 end
 
 Given(/^I am on their page$/) do
-user = User.create!(username: 'user_2',
-                    name: 'bob',
-                    location: 'gagnamland',
-                    email: 'bob@gagnamland.com',
-                    password: 'hellothere1',
-                    password_confirmation: 'hellothere1'
+  User.create!(username: 'user_2',
+               name: 'bob',
+               location: 'gagnamland',
+               email: 'bob@gagnamland.com',
+               password: 'hellothere1',
+               password_confirmation: 'hellothere1'
                   )
-id = user.id
-visit '/users/id'
+  visit '/users/:id'
 end
 
 Then(/^I should see their photos$/) do
