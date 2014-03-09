@@ -9,58 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require foundation_and_overrides
+
  *= require_tree .
  */
-
-body {
-  background-color: #b0b6bb;
-}
-
-header {
-  padding: 1em;
-  background-color: black;
-  color: yellow;
-  border-bottom: 3px solid #55ffff;
-}
-
-ul {
-  float: right;
-  padding: 2em;
-}
-
-li {
-  display: inline-block;
-  margin: 0 4em;
-}
-
-a {
-  text-decoration: none;
-  color: #e8edee;
-}
-
-nav {
-  position: relative;
-  left: 80%;
-  bottom: 30px;
-}
-
-header a img {
-  position: relative;
-  top: 10px;
-  left: 10px;
-}
-
-header a:hover {
-  color: #55ffff;
-}
-
-#photo-stream {
-  text-align: center;
-}
-
-#photo-stream section {
-  margin: 1em 20em;
-  border-radius: 4em;
-  background: #FFF;
-  border: 4px solid #27384b;
-}

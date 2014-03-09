@@ -2,24 +2,16 @@
 <html>
 <head>
   <title>DeathStarPhotoService</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= javascript_include_tag 'http://js.pusher.com/2.1/pusher.min.js' %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <a href="/"><%= image_tag("logo_alt.png") %></a>
-    <nav>
-      <% if user_signed_in? %>
-        <li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
-        <li><%= link_to('Add Photo', new_photo_path ) %></li>
-      <% else %>
-        <li><%= link_to('Sign Up', new_user_registration_path) %></li>
-        <li><%= link_to('Sign In', new_user_session_path ) %></li>
-      <% end %>
-    </nav>
-  </header>
+  <%= render 'layouts/header' %>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
