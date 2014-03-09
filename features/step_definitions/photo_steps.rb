@@ -53,10 +53,6 @@ Then(/^my photo should not be added to the DB$/) do
   expect(Photo.all.length).to eq(0)
 end
 
-Then(/^the username$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
 Then(/^the comments$/) do
   pending # express the regexp above with the code you wish you had
 end

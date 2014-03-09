@@ -12,7 +12,6 @@ Scenario: Viewing the homepage
 @wip
 Scenario: Viewing individual photos
   Given I am on the individual photo page
-  Then I should see the photo
-  And the username
+  Then I should see its description
+  And the username of the user it belongs to
   And the comments
-  And the description
