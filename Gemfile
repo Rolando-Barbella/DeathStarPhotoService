@@ -12,6 +12,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'aws-sdk'
 gem 'pusher'
+gem 'foundation-rails'
 
 group :doc do
   gem 'sdoc', require: false
