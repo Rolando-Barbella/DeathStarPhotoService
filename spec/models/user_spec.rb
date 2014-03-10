@@ -16,7 +16,7 @@ describe User do
     end
 
     [:name, :username, :email].each do |attribute|
-      it "should only be valid with a user #{attribute}" do
+      it "should be invalid without a user #{attribute}" do
         expect(@user).to be_invalid
         expect(@user.errors[attribute]).not_to be_empty
       end
