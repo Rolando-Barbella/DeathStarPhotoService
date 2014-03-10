@@ -11,6 +11,7 @@
       <% if user_signed_in? %>
         <%= link_to('Add Photo', new_photo_path ) %>
         <ul class="dropdown">
+          <li><%= link_to('Edit profile', edit_user_path(@user.username), :method => :get) %></li>
           <li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
         </ul>
       <% else %>

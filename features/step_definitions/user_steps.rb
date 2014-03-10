@@ -57,7 +57,7 @@ Given(/^I visit my profile page$/) do
 end
 
 Then(/^I should see "(.*?)" button$/) do |arg1|
-  expect(page).to have_content('edit profile')
+  expect(page).to have_content('Edit profile')
   # expect(page).to have_selector('input', value: 'edit profile')
 end
 
