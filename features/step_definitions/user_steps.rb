@@ -58,7 +58,6 @@ end
 
 Then(/^I should see "(.*?)" button$/) do |arg1|
   expect(page).to have_content('Edit profile')
-  # expect(page).to have_selector('input', value: 'edit profile')
 end
 
 Given(/^the user has uploaded some photos$/) do

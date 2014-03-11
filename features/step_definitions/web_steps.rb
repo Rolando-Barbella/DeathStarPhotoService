@@ -16,6 +16,10 @@ Given(/^I am on the sign up page$/) do
   visit '/users/sign_up'
 end
 
+Then(/^I should be on the edit profile page$/) do
+  visit '/users/edit'
+end
+
 # Form completion
 Given(/^I select a photo$/) do
   attach_file('photo_image', 'features/test.jpg')
@@ -30,3 +34,6 @@ When(/^I press "([^\"]+)"$/) do |button|
   click_button button
 end
 
+When(/^I click "(.*?)"$/) do |link|
+  click_link link
+end
