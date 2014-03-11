@@ -5,7 +5,6 @@ describe Photo do
     {
       image: File.new('./test.jpg'),
       description: 'photoey',
-      user_id: 1,
       price: 500
     }
   end
@@ -18,6 +17,7 @@ describe Photo do
             password_confirmation: '12345678'
           })
   end
+  let (:invalid_user) { User.new }
   let (:empty_photo) { Photo.new }
 
   context 'Verifying photo details' do
@@ -45,30 +45,14 @@ describe Photo do
 
   context 'Checking existance of photo creator' do
     
-    it 'should be invalid when given a none existant user id' do
+    it 'should be invalid when given a none existant user' do
       photo = Photo.new(valid_photo_details)
       expect(photo).to be_invalid
       expect(photo.errors[:user]).not_to be_empty
     end
 
-    it 'should be valid when given an existing user id' do
-
-      # expect(User).to receive(:exist?)
-      # expect(User).to receive(:first)
-      # expect(User).to receive(:find)
-      # expect(User).to receive(:find_by)
-      # expect(User).to receive(:find_by!)
-      # expect(User).to receive(:last)
-      # expect(User).to receive(:last!)
-      # expect(User).to receive(:take)
-      # expect(User).to receive(:take!)
-      # expect(User).to receive(:find_by_id)
-      # expect(User).to receive(:find_by_id!)
-      # Would like to stub user class so that I dont have to access database but cannot find call
-
-      expect(valid_user).to be_valid
-      valid_user.save!
-      photo = Photo.new(valid_photo_details.merge({user_id: valid_user.id}))
+    it 'should be valid when given an existing user' do
+      photo = Photo.new(valid_photo_details.merge({user: valid_user}))
       expect(photo).to be_valid
     end
   end

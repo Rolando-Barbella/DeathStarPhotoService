@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    photo = Photo.save_and_send(photo_params.merge(user: current_user))
+    Photo.save_and_send(photo_params.merge(user: current_user))
     redirect_to '/'
   end
 
