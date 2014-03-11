@@ -20,6 +20,12 @@ describe Photo do
       expect(photo).to be_invalid
       expect(photo.errors[:price]).not_to be_empty
     end
+
+    it 'should not accept a decimal price' do
+      photo = Photo.new price: 0.11
+      expect(photo).to be_invalid
+      expect(photo.errors[:price]).not_to be_empty
+    end
   end
 
   context 'Checking existance of photo creator' do
