@@ -6,7 +6,7 @@ describe Photo do
       @photo = Photo.new
     end
 
-    [:description, :image, :user].each do |attribute|
+    [:description, :image, :user, :price].each do |attribute|
       it "should be invalid without a photo #{attribute}" do
         expect(@photo).to be_invalid
         expect(@photo.errors[attribute]).not_to be_empty
@@ -15,7 +15,14 @@ describe Photo do
   end
 
   context 'Checking existance of photo creator' do
-    let(:valid_details) { {image: File.new('./test.jpg'), description: 'photoey', user_id: 1} }
+    let(:valid_details) do
+      {
+        image: File.new('./test.jpg'),
+        description: 'photoey',
+        user_id: 1,
+        price: 500
+      }
+    end
 
     it 'should be invalid when given a none existant user id' do
       photo = Photo.new(valid_details)
