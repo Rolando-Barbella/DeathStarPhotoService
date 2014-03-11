@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Photo do
-  let(:valid_details) do
+  let(:valid_photo_details) do
     {
       image: File.new('./test.jpg'),
       description: 'photoey',
@@ -46,7 +46,7 @@ describe Photo do
   context 'Checking existance of photo creator' do
     
     it 'should be invalid when given a none existant user id' do
-      photo = Photo.new(valid_details)
+      photo = Photo.new(valid_photo_details)
       expect(photo).to be_invalid
       expect(photo.errors[:user]).not_to be_empty
     end
@@ -68,11 +68,16 @@ describe Photo do
 
       expect(valid_user).to be_valid
       valid_user.save!
-      photo = Photo.new(valid_details.merge({user_id: valid_user.id}))
+      photo = Photo.new(valid_photo_details.merge({user_id: valid_user.id}))
       expect(photo).to be_valid
     end
   end
   context 'Sending upload notification via Pusher' do
-    
+    it 'should send a message to pusher if saved' do
+      expect(valid_user).to be_valid
+      valid_user.save!
+      expect(Pusher).to receive(:trigger)
+      Photo.save_and_send(valid_photo_details.merge({user_id: valid_user.id}))
+    end
   end
 end
