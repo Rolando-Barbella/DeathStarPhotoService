@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   def create
     photo = Photo.new(photo_params.merge(user: current_user))
     if photo.save
-      Pusher['the_force'].trigger('new_photo', {
+      Pusher.trigger('the_force', 'new_photo', {
         url: photo.image.url(:medium),
         description: photo.description,
         id: photo.id,

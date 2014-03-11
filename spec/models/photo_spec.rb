@@ -29,7 +29,7 @@ describe Photo do
     end
   end
 
-  context 'real price information' do
+  context 'price information' do
     it 'should not accept a negative price' do
       photo = Photo.new price: -100
       expect(photo).to be_invalid
@@ -52,7 +52,7 @@ describe Photo do
     end
 
     it 'should be valid when given an existing user id' do
-      
+
       # expect(User).to receive(:exist?)
       # expect(User).to receive(:first)
       # expect(User).to receive(:find)
