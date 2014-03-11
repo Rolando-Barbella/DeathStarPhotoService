@@ -12,6 +12,7 @@ Given(/^there is a photo in the database$/) do
   visit '/photos/new'
   attach_file('photo_image', 'features/test.jpg')
   fill_in 'photo_description', with: photo_description_text
+  fill_in 'photo_price', with: '500'
   click_button 'Upload'
 end
 
