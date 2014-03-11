@@ -14,6 +14,14 @@ describe Photo do
     end
   end
 
+  context 'real price information' do
+    it 'should not accept a negative price' do
+      photo = Photo.new price: -100
+      expect(photo).to be_invalid
+      expect(photo.errors[:price]).not_to be_empty
+    end
+  end
+
   context 'Checking existance of photo creator' do
     let(:valid_details) do
       {
