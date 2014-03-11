@@ -6,15 +6,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    photo = Photo.new(photo_params.merge(user: current_user))
-    if photo.save
-      Pusher['the_force'].trigger('new_photo', {
-        url: photo.image.url(:medium),
-        description: photo.description,
-        id: photo.id,
-        username: photo.user.username
-      })
-    end
+    Photo.save_and_send(photo_params.merge(user: current_user))
     redirect_to '/'
   end
 
