@@ -8,6 +8,7 @@ Scenario: Submitting a photo when signed in
   And I am on the addphotopage
   And I select a photo
   And I fill in the "photo_description" field
+  And I fill in the photoprice field
   When I press "Upload"
   Then my photo should be added to the DB
 

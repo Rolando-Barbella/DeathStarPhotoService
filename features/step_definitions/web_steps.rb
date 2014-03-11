@@ -29,6 +29,10 @@ Given(/^I fill in the "(.*?)" field$/) do |field|
   fill_in field, with: 'this is programming cat'
 end
 
+Given(/^I fill in the photoprice field$/) do
+  fill_in 'photo_price', with: 500
+end
+
 # Pressing and clicking
 When(/^I press "([^\"]+)"$/) do |button|
   click_button button
